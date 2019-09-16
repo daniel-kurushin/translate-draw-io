@@ -13,7 +13,7 @@ def do_translate(fname):
         try:
             _in = mxCell['value']
             try:
-                _out = TM['_in']
+                _out = TM[_in]
             except KeyError:
                 _out = translate.translate(_in, 'ru-en')['text'][0]
                 TM.update({_in:_out})
